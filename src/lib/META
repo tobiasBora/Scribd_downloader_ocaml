@@ -1,0 +1,12 @@
+# OASIS_START
+# DO NOT EDIT (digest: ef5b28c4e68d598f7dd3df5842329d92)
+version = "2.0"
+description = "A program to download documents from Scribd in PDF."
+requires = "batteries camlpdf fileutils lwt lwt.unix"
+archive(byte) = "scribd_downloader.cma"
+archive(byte, plugin) = "scribd_downloader.cma"
+archive(native) = "scribd_downloader.cmxa"
+archive(native, plugin) = "scribd_downloader.cmxs"
+exists_if = "scribd_downloader.cma"
+# OASIS_STOP
+

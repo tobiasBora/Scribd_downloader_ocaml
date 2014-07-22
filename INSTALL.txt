@@ -1,0 +1,44 @@
+(* OASIS_START *)
+(* DO NOT EDIT (digest: 982d14bface1d434a6997f02ff15e878) *)
+
+This is the INSTALL file for the Scribd_downloader distribution.
+
+This package uses OASIS to generate its build system. See section OASIS for
+full information.
+
+Dependencies
+============
+
+In order to compile this package, you will need:
+
+* ocaml
+* findlib
+* batteries for library scribd_downloader,
+  executable scribd_downloader_console
+* camlpdf for library scribd_downloader
+* fileutils for library scribd_downloader
+* lwt for library scribd_downloader, executable scribd_downloader_console
+* cmdliner for executable scribd_downloader_console
+
+Installing
+==========
+
+1. Uncompress the source archive and go to the root of the package
+2. Run 'ocaml setup.ml -configure'
+3. Run 'ocaml setup.ml -build'
+4. Run 'ocaml setup.ml -install'
+
+Uninstalling
+============
+
+1. Go to the root of the package
+2. Run 'ocaml setup.ml -uninstall'
+
+OASIS
+=====
+
+OASIS is a program that generates a setup.ml file using a simple '_oasis'
+configuration file. The generated setup only depends on the standard OCaml
+installation: no additional library is required.
+
+(* OASIS_STOP *)

@@ -1,0 +1,36 @@
+OASISFormat: 0.4
+Name:        Scribd_downloader
+Version:     2.0
+Synopsis:    A program to download documents from Scribd in PDF.
+Authors:     Tobias Bora
+License:     GPL-3.0
+Plugins:     META (0.4), DevFiles (0.4)
+
+Library scribd_downloader
+  Path:       src/lib/
+  BuildTools: ocamlbuild
+  Modules:    Scribd_downloader
+  BuildDepends:
+    batteries,
+    camlpdf,
+    fileutils,
+    lwt,
+    lwt.unix
+
+  
+Executable scribd_downloader_console
+  Path:       src/console/
+  BuildTools: ocamlbuild
+  MainIs:     main_console.ml
+  BuildDepends:
+    scribd_downloader,
+    cmdliner,
+    batteries,
+    lwt,
+    lwt.unix
+  
+Executable scribd_downloader_gui
+  Path:       src/gui/
+  BuildTools: ocamlbuild
+  MainIs:     main_gui.ml
+  BuildDepends: scribd_downloader  

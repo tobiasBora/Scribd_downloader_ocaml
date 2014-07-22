@@ -1,0 +1,2 @@
+* Was is this script ?
+This script is aimed to download a document from the website Scribd into PDF.
