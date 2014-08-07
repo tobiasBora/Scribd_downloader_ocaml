@@ -19,9 +19,17 @@ let download_script phantomjs convert zoom tmp_folder out_file size_group_page d
       pr 2 "(Don't worry if it's a bit long)";
       step_1_download_page pr conf url)
       >>= fun () ->
-      let title = step_2_get_title conf in
+      let title =
+	try
+	  step_2_get_title conf
+	with _ -> failwith "The title cannot be found. Please make sure the page comes from Scribd, if not contact the developper."
+      in
       pr 2 ("Title: " ^ title);
-      let (n_tot, pages_size_enum, max_sizes) =	step_3_get_pages_size conf in
+      let (n_tot, pages_size_enum, max_sizes) =
+	try
+	  step_3_get_pages_size conf
+	with _ -> failwith "The pages aren't detected. Please make sure the page comes from Scribd, if not contact the developper."
+      in
       pr 2 (Printf.sprintf "Nb of pages: %d" n_tot);
       pr 2 (Printf.sprintf "Max height: %d, Max width: %d" (fst max_sizes) (snd max_sizes));
       if conf.debug_mode then

@@ -11,7 +11,6 @@ Library scribd_downloader
   BuildTools: ocamlbuild
   Modules:    Scribd_downloader
   BuildDepends:
-    batteries,
     camlpdf,
     fileutils,
     lwt,
@@ -25,7 +24,6 @@ Executable scribd_downloader_console
   BuildDepends:
     scribd_downloader,
     cmdliner,
-    batteries,
     lwt,
     lwt.unix
   
